@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constructora Reyes Juan SRL | Obras viales y movimiento de suelos en Tucumán</title>
+<meta name="description" content="Repavimentación de rutas, excavaciones, movimiento de suelos y canales en San Miguel de Tucumán. Constructora Reyes Juan SRL.">
+<meta property="og:title" content="Constructora Reyes Juan SRL">
+<meta property="og:description" content="Repavimentación de rutas, excavaciones, movimiento de suelos y canales en San Miguel de Tucumán.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#15181c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='4' fill='%23f5b800'/%3E%3Cpath d='M8 21 20 10l12 11M12 21v11h16V21' fill='none' stroke='%2315181c' stroke-width='3.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* Paleta: asfalto, cemento, amarillo de máquina, cielo de atardecer */
+  --asfalto:#15181c;
+  --asfalto-2:#1f2329;
+  --cemento:#ebedee;
+  --blanco:#f7f8f8;
+  --amarillo:#f5b800;
+  --atardecer:#e8782a;
+  --texto-claro:#b9c0c9;     /* texto secundario sobre fondo oscuro */
+  --texto-suave:#444c56;     /* texto secundario sobre fondo claro */
+  --linea:#c9cdd1;
+  --azul:#1d4f8a;
+
+  /* PARA USAR UNA FOTO PROPIA EN LA PORTADA: subí la foto junto a este archivo (por ejemplo hero.jpg)
+     y reemplazá "none" por url("hero.jpg"). Se muestra encima del dibujo. */
+  --foto-hero:none;
+
+  --fuente:"Overpass","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --radio:4px;
+  --gutter:clamp(20px,5vw,56px);
+  --ancho:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cemento);color:var(--asfalto);font-family:var(--fuente);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.04;letter-spacing:-.01em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.sobre-oscuro :focus-visible,.cabecera :focus-visible,.pie :focus-visible,.hero :focus-visible{outline-color:var(--amarillo)}
+.salto{position:absolute;left:-999px;top:8px;background:var(--amarillo);color:var(--asfalto);padding:10px 14px;z-index:100;border-radius:var(--radio);font-weight:700}
+.salto:focus{left:8px}
+.contenedor{width:100%;max-width:calc(var(--ancho) + var(--gutter)*2);margin:0 auto;padding-inline:var(--gutter)}
+section[id]{scroll-margin-top:72px}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:var(--radio);border:2px solid var(--asfalto);font:700 1rem/1 var(--fuente);text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-principal{background:var(--amarillo);color:var(--asfalto)}
+.btn-principal:hover{background:var(--asfalto);color:var(--amarillo)}
+.sobre-oscuro .btn-principal,.hero .btn-principal{border-color:var(--amarillo)}
+.sobre-oscuro .btn-principal:hover,.hero .btn-principal:hover{background:#fff;border-color:#fff;color:var(--asfalto)}
+.btn-borde{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-borde:hover{background:#fff;color:var(--asfalto);border-color:#fff}
+
+/* ---------- Encabezado ---------- */
+.cabecera{position:sticky;top:0;z-index:50;background:var(--asfalto);color:#fff;border-bottom:1px solid #2a3038}
+.cabecera .contenedor{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca svg{width:40px;height:40px;flex:none}
+.marca-texto{display:flex;flex-direction:column;line-height:1}
+.marca-texto b{font-size:1.4rem;font-weight:800;letter-spacing:-.01em}
+.marca-texto span{font-size:.78rem;color:var(--texto-claro);margin-top:3px;font-weight:600}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a:not(.btn){padding:10px 12px;text-decoration:none;font-weight:600;font-size:.98rem;border-radius:var(--radio)}
+.menu a:not(.btn):hover{background:rgba(255,255,255,.1)}
+.menu .btn{min-height:42px;padding:8px 18px;margin-left:10px}
+.burger{display:none;min-height:44px;padding:8px 16px;background:transparent;border:2px solid rgba(255,255,255,.7);border-radius:var(--radio);font:700 .95rem var(--fuente);color:#fff;cursor:pointer}
+
+/* ---------- Portada ---------- */
+.hero{position:relative;overflow:hidden;background:#141b29;color:#fff;isolation:isolate}
+.hero-escena,.hero-foto{position:absolute;inset:0}
+.hero-escena svg{width:100%;height:100%}
+.hero-foto{background:var(--foto-hero) center/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(13,15,19,.9) 0%,rgba(13,15,19,.72) 34%,rgba(13,15,19,.15) 68%,rgba(13,15,19,0) 100%),
+    linear-gradient(180deg,rgba(13,15,19,.25) 0%,rgba(13,15,19,0) 30%,rgba(13,15,19,0) 80%,rgba(13,15,19,.55) 100%)}
+.hero .contenedor{position:relative;z-index:2;display:flex;align-items:center;min-height:clamp(560px,86vh,780px);padding-block:clamp(44px,7vw,88px)}
+.hero-texto{max-width:34rem}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5.2rem);max-width:11ch;color:#fff}
+.hero .bajada{margin-top:24px;font-size:1.2rem;color:#e3e7ec;max-width:30em}
+.acciones{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:34px}
+.enlace{font-weight:700;color:#fff;text-underline-offset:5px;text-decoration-thickness:2px}
+.enlace:hover{color:var(--amarillo)}
+
+@keyframes llega-izq{from{transform:translateX(-90px);opacity:0}to{transform:none;opacity:1}}
+@keyframes llega-der{from{transform:translateX(120px);opacity:0}to{transform:none;opacity:1}}
+.llega-izq{animation:llega-izq 1.3s cubic-bezier(.2,.7,.2,1) both .15s}
+.llega-der{animation:llega-der 1.3s cubic-bezier(.2,.7,.2,1) both .3s}
+
+/* ---------- Franja de zona ---------- */
+.zona{background:var(--amarillo);color:var(--asfalto);border-block:3px solid var(--asfalto)}
+.zona .contenedor{display:flex;align-items:center;justify-content:center;gap:14px;padding-block:18px;text-align:center}
+.zona svg{width:26px;height:26px;flex:none}
+.zona p{font-weight:800;font-size:clamp(1.1rem,2.6vw,1.55rem);line-height:1.2}
+
+/* ---------- Secciones ---------- */
+.seccion{padding-block:clamp(56px,8vw,104px)}
+.seccion h2{font-size:clamp(2.2rem,5vw,3.6rem);max-width:14ch}
+.intro{margin-top:16px;color:var(--texto-suave);max-width:32em}
+.sobre-oscuro{background:var(--asfalto);color:#fff}
+.sobre-oscuro .intro{color:var(--texto-claro)}
+
+/* Servicios: filas con señal vial */
+.servicios .encabezado{margin-bottom:clamp(28px,4vw,48px)}
+.servicios li{display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,1.25fr);align-items:center;gap:8px 24px;padding:22px 0;border-bottom:3px dashed rgba(21,24,28,.28)}
+.servicios li:first-child{border-top:3px dashed rgba(21,24,28,.28)}
+.servicios h3{font-size:1.65rem}
+.servicios p{color:var(--texto-suave)}
+.rombo{width:80px;height:80px;position:relative;display:grid;place-items:center}
+.rombo::before{content:"";position:absolute;inset:15px;background:var(--amarillo);border:3px solid var(--asfalto);border-radius:6px;transform:rotate(45deg);box-shadow:inset 0 0 0 3px var(--amarillo),inset 0 0 0 5px var(--asfalto)}
+.rombo svg{position:relative;width:28px;height:28px;stroke:var(--asfalto);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Cómo avanza una obra: progresivas de ruta */
+.tramos{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 28px;margin-top:clamp(32px,5vw,56px);counter-reset:none}
+.tramos::before{content:"";position:absolute;left:0;right:0;top:13px;border-top:4px dashed var(--amarillo)}
+.tramos li{position:relative;padding-top:48px}
+.tramos li::before{content:"";position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;background:var(--amarillo);border:5px solid var(--asfalto);box-shadow:0 0 0 3px var(--amarillo)}
+.progresiva{display:block;font-size:1.7rem;font-weight:800;color:var(--amarillo);line-height:1;margin-bottom:10px}
+.tramos h3{font-size:1.2rem;font-weight:700;margin-bottom:6px;letter-spacing:0}
+.tramos p{color:var(--texto-claro);font-size:1rem}
+
+/* Obras */
+.obras{background:var(--blanco);border-block:1px solid var(--linea)}
+.obras .encabezado{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 40px;margin-bottom:40px}
+.obras .intro{margin-top:0}
+.grilla-obras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.obra{display:flex;flex-direction:column;border:2px solid var(--asfalto);border-radius:var(--radio);background:var(--cemento);overflow:hidden}
+.obra .foto{position:relative;aspect-ratio:4/3;border-bottom:2px solid var(--asfalto);background:repeating-linear-gradient(135deg,rgba(21,24,28,.07) 0 2px,transparent 2px 14px),var(--linea)}
+.obra .estado{position:absolute;left:0;top:0;background:var(--amarillo);padding:6px 14px;font-weight:700;font-size:.9rem;border-right:2px solid var(--asfalto);border-bottom:2px solid var(--asfalto)}
+.obra .cuerpo{padding:20px 20px 24px}
+.obra h3{font-size:1.5rem}
+.obra p{margin-top:10px;color:var(--texto-suave);font-size:1rem}
+.obra.libre{border-style:dashed;background:transparent}
+.obra.libre .foto{background:transparent;border-bottom-style:dashed;display:grid;place-items:center}
+.obra.libre .foto span{color:var(--texto-suave);font-weight:600;padding:0 24px;text-align:center}
+
+/* Quiénes somos */
+.nosotros .contenedor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.nosotros h2{max-width:12ch}
+.nosotros .texto-grande{margin-top:20px;font-size:1.15rem;color:var(--texto-suave);max-width:30em}
+.principios{display:grid;gap:26px}
+.principios div{padding-left:20px;border-left:6px solid var(--amarillo)}
+.principios h3{font-size:1.5rem;margin-bottom:6px}
+.principios p{color:var(--texto-suave)}
+
+/* Contacto */
+.contacto .contenedor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,88px);align-items:start}
+.contacto h2{color:#fff}
+.datos{margin-top:30px;display:grid;gap:18px}
+.datos a.mail{font-weight:700;font-size:1.1rem;text-underline-offset:4px;word-break:break-word;color:#fff}
+.datos a.mail:hover{color:var(--amarillo)}
+form{background:var(--blanco);color:var(--asfalto);border:3px solid var(--amarillo);border-radius:var(--radio);padding:clamp(20px,3vw,32px);display:grid;gap:18px}
+label{display:grid;gap:6px;font-weight:700;font-size:.98rem}
+input,textarea{width:100%;font:400 1rem/1.4 var(--fuente);color:var(--asfalto);background:#fff;border:2px solid var(--linea);border-radius:var(--radio);padding:12px 14px}
+input:hover,textarea:hover{border-color:#8b939c}
+input:focus-visible,textarea:focus-visible{border-color:var(--azul);outline-offset:1px}
+textarea{min-height:130px;resize:vertical}
+form .btn{justify-self:start;border-color:var(--asfalto)}
+form .btn:hover{background:var(--asfalto);color:var(--amarillo);border-color:var(--asfalto)}
+form small{color:var(--texto-suave)}
+
+/* Pie */
+.pie{background:#0f1215;color:var(--texto-claro);padding-block:36px 100px}
+.pie .contenedor{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px}
+.pie .marca-texto b{color:#fff}
+.pie nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px}
+.pie a{text-underline-offset:4px}
+.pie a:hover{color:var(--amarillo)}
+.pie small{width:100%;border-top:1px solid #262c33;padding-top:18px;color:#8e97a2}
+
+/* Botón flotante de WhatsApp */
+.flota{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 20px;border-radius:999px;background:#25d366;color:#0b1f12;font:800 1rem/1 var(--fuente);text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:background-color .15s}
+.flota:hover{background:#fff}
+.flota svg{width:24px;height:24px;flex:none}
+
+/* ---------- Tablet y celular ---------- */
+@media (max-width:1000px){
+  .tramos{grid-template-columns:1fr;gap:6px;padding-left:0}
+  .tramos::before{left:12px;right:auto;top:0;bottom:0;border-top:0;border-left:4px dashed var(--amarillo)}
+  .tramos li{padding:0 0 26px 58px}
+  .tramos li::before{top:0}
+}
+@media (max-width:900px){
+  .nosotros .contenedor,.contacto .contenedor{grid-template-columns:1fr}
+  .grilla-obras{grid-template-columns:1fr 1fr}
+  .servicios li{grid-template-columns:80px minmax(0,1fr);}
+  .servicios li p{grid-column:2}
+}
+@media (max-width:720px){
+  .burger{display:inline-block}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--asfalto);border-bottom:3px solid var(--amarillo);padding:10px var(--gutter) 18px}
+  .menu.abierto{display:flex}
+  .menu a:not(.btn){padding:14px 4px;border-bottom:1px solid #2a3038;border-radius:0}
+  .menu .btn{margin:16px 0 0}
+  .hero{background:#101827}
+  /* En celular el dibujo se ancla abajo a la derecha para que se vean las dos máquinas enteras */
+  .hero-escena svg{position:absolute;right:0;bottom:0;width:780px;max-width:none;height:auto}
+  .hero .contenedor{align-items:flex-start;min-height:700px;padding-top:40px}
+  .hero::after{background:
+    linear-gradient(180deg,rgba(13,15,19,.88) 0%,rgba(13,15,19,.62) 45%,rgba(13,15,19,.05) 75%,rgba(13,15,19,.4) 100%)}
+  .acciones .btn{width:100%}
+  .grilla-obras{grid-template-columns:1fr}
+  .flota span{display:none}
+  .flota{padding:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .llega-izq,.llega-der{animation:none}
+  .btn,.flota{transition:none}
+}
+</style>
+</head>
+
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="#inicio" aria-label="Constructora Reyes Juan SRL, inicio">
+      <!-- LOGO genérico: reemplazalo por el definitivo cuando lo tengas -->
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="4" fill="#f5b800"/>
+        <path d="M8 21 20 10l12 11" fill="none" stroke="#15181c" stroke-width="3.2"/>
+        <path d="M12 21v11h16V21" fill="none" stroke="#15181c" stroke-width="3.2"/>
+        <rect x="18" y="25" width="4" height="7" fill="#15181c"/>
+      </svg>
+      <span class="marca-texto"><b>Reyes Juan</b><span>Constructora SRL</span></span>
+    </a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#obras">Obras</a>
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-borde" data-sistema href="https://constructora-reyes-juan.streamlit.app/" target="_blank" rel="noopener">Acceso al sistema</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ===== Portada ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-escena" aria-hidden="true">
+      <svg viewBox="0 0 1600 800" preserveAspectRatio="xMaxYMax slice">
+        <defs>
+          <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#101827"/>
+            <stop offset=".42" stop-color="#2b3350"/>
+            <stop offset=".68" stop-color="#7b4b55"/>
+            <stop offset=".86" stop-color="#d9803a"/>
+            <stop offset="1" stop-color="#f3a64c"/>
+          </linearGradient>
+          <radialGradient id="sol" cx="1180" cy="650" r="430" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ffd890" stop-opacity=".95"/>
+            <stop offset=".35" stop-color="#ffb35a" stop-opacity=".45"/>
+            <stop offset="1" stop-color="#ffb35a" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="suelo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a1e17"/>
+            <stop offset="1" stop-color="#0f0b09"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Cielo -->
+        <rect width="1600" height="730" fill="url(#cielo)"/>
+        <rect width="1600" height="730" fill="url(#sol)"/>
+        <g fill="#141b2b" opacity=".4">
+          <ellipse cx="260" cy="150" rx="300" ry="13"/>
+          <ellipse cx="520" cy="215" rx="260" ry="10"/>
+          <ellipse cx="1050" cy="120" rx="340" ry="12"/>
+          <ellipse cx="1380" cy="250" rx="240" ry="9"/>
+        </g>
+        <g fill="#ffbf75" opacity=".16">
+          <ellipse cx="900" cy="470" rx="320" ry="8"/>
+          <ellipse cx="1320" cy="520" rx="260" ry="7"/>
+          <ellipse cx="520" cy="540" rx="280" ry="7"/>
+        </g>
+
+        <!-- Lomas lejanas -->
+        <path d="M0 640 C180 600 380 630 600 610 S980 580 1220 618 S1500 600 1600 622 V740 H0Z" fill="#2c2a3a"/>
+        <path d="M0 668 C220 640 460 668 700 652 S1100 634 1340 664 S1520 652 1600 660 V740 H0Z" fill="#221f2c"/>
+
+        <!-- Suelo -->
+        <rect y="716" width="1600" height="84" fill="url(#suelo)"/>
+        <!-- Montículos de material -->
+        <path d="M600 726 C690 646 830 636 940 726Z" fill="#3b2e25"/>
+        <path d="M1090 730 C1170 656 1280 646 1370 730Z" fill="#46362b"/>
+        <path d="M1090 730 C1130 692 1180 676 1230 672 C1180 694 1140 712 1120 730Z" fill="#5a4636" opacity=".6"/>
+
+        <!-- Excavadora -->
+        <g class="llega-izq">
+          <g transform="translate(760 493) scale(.72)">
+            <!-- orugas -->
+            <rect x="0" y="262" width="300" height="62" rx="31" fill="#1c1d20" stroke="#14110d" stroke-width="3"/>
+            <circle cx="34" cy="293" r="22" fill="#34373c"/><circle cx="266" cy="293" r="22" fill="#34373c"/>
+            <circle cx="34" cy="293" r="8" fill="#14110d"/><circle cx="266" cy="293" r="8" fill="#14110d"/>
+            <circle cx="95" cy="313" r="7" fill="#34373c"/><circle cx="150" cy="313" r="7" fill="#34373c"/><circle cx="205" cy="313" r="7" fill="#34373c"/>
+            <rect x="18" y="238" width="264" height="28" rx="6" fill="#2a2d32"/>
+            <!-- casa de máquinas -->
+            <rect x="-22" y="150" width="272" height="92" rx="14" fill="#f5b800" stroke="#14110d" stroke-width="3"/>
+            <rect x="-22" y="150" width="46" height="92" rx="14" fill="#c78f00" stroke="#14110d" stroke-width="3"/>
+            <rect x="30" y="128" width="122" height="30" rx="8" fill="#f5b800" stroke="#14110d" stroke-width="3"/>
+            <!-- cabina -->
+            <path d="M148 152V92Q148 82 158 82H240Q250 82 250 92V152Z" fill="#f5b800" stroke="#14110d" stroke-width="3"/>
+            <path d="M162 98H236V142H162Z" fill="#4f6a85" stroke="#14110d" stroke-width="3"/>
+            <path d="M162 98H198L172 142H162Z" fill="#9db8d0" opacity=".45"/>
+            <rect x="140" y="72" width="118" height="12" rx="4" fill="#c78f00" stroke="#14110d" stroke-width="3"/>
+            <!-- pluma y brazo -->
+            <polyline points="236,150 392,52" fill="none" stroke="#14110d" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="392,52 508,210" fill="none" stroke="#14110d" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="236,150 392,52" fill="none" stroke="#f5b800" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="392,52 508,210" fill="none" stroke="#f5b800" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="264" y1="128" x2="362" y2="66" stroke="#9aa0a8" stroke-width="8" stroke-linecap="round"/>
+            <line x1="404" y1="40" x2="478" y2="146" stroke="#9aa0a8" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="392" cy="52" r="10" fill="#2a2d32" stroke="#14110d" stroke-width="3"/>
+            <!-- cuchara -->
+            <path d="M486 206 L552 188 Q586 234 542 278 L500 264 Z" fill="#f5b800" stroke="#14110d" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M542 278 l-6 14 M526 273 l-6 14 M510 268 l-6 14" stroke="#14110d" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="508" cy="210" r="8" fill="#2a2d32" stroke="#14110d" stroke-width="3"/>
+          </g>
+        </g>
+
+        <!-- Pala cargadora -->
+        <g class="llega-der">
+          <g transform="translate(1340 509) scale(.72)">
+            <!-- brazo y cuchara -->
+            <polyline points="130,170 -50,232" fill="none" stroke="#14110d" stroke-width="22" stroke-linecap="round"/>
+            <polyline points="130,170 -50,232" fill="none" stroke="#f5b800" stroke-width="14" stroke-linecap="round"/>
+            <line x1="110" y1="150" x2="-8" y2="196" stroke="#9aa0a8" stroke-width="7" stroke-linecap="round"/>
+            <path d="M-42 176 L-162 204 L-146 296 L-32 282 Z" fill="#f5b800" stroke="#14110d" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M-162 204 L-176 214 L-160 304 L-146 296 Z" fill="#c78f00" stroke="#14110d" stroke-width="3" stroke-linejoin="round"/>
+            <!-- ruedas -->
+            <circle cx="62" cy="240" r="62" fill="#16171a" stroke="#14110d" stroke-width="3"/>
+            <circle cx="62" cy="240" r="52" fill="none" stroke="#2c2f34" stroke-width="7" stroke-dasharray="9 7"/>
+            <circle cx="62" cy="240" r="30" fill="#2c2f34"/><circle cx="62" cy="240" r="12" fill="#c78f00"/>
+            <circle cx="252" cy="240" r="62" fill="#16171a" stroke="#14110d" stroke-width="3"/>
+            <circle cx="252" cy="240" r="52" fill="none" stroke="#2c2f34" stroke-width="7" stroke-dasharray="9 7"/>
+            <circle cx="252" cy="240" r="30" fill="#2c2f34"/><circle cx="252" cy="240" r="12" fill="#c78f00"/>
+            <!-- carrocería -->
+            <rect x="10" y="150" width="262" height="72" rx="12" fill="#f5b800" stroke="#14110d" stroke-width="3"/>
+            <rect x="262" y="118" width="62" height="104" rx="10" fill="#f5b800" stroke="#14110d" stroke-width="3"/>
+            <rect x="262" y="118" width="62" height="22" rx="8" fill="#c78f00" stroke="#14110d" stroke-width="3"/>
+            <rect x="282" y="76" width="9" height="44" fill="#2a2d32"/>
+            <!-- cabina -->
+            <rect x="150" y="70" width="112" height="84" rx="10" fill="#f5b800" stroke="#14110d" stroke-width="3"/>
+            <rect x="162" y="82" width="88" height="56" rx="6" fill="#4f6a85" stroke="#14110d" stroke-width="3"/>
+            <path d="M162 82H196L172 138H162Z" fill="#9db8d0" opacity=".45"/>
+            <rect x="142" y="60" width="130" height="12" rx="4" fill="#c78f00" stroke="#14110d" stroke-width="3"/>
+            <circle cx="130" cy="170" r="9" fill="#2a2d32" stroke="#14110d" stroke-width="3"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-foto" aria-hidden="true"></div>
+
+    <div class="contenedor">
+      <div class="hero-texto">
+        <h1>Hacemos camino en San Miguel de Tucumán.</h1>
+        <p class="bajada">Repavimentación de rutas, excavaciones, movimiento de suelos y canales, con maquinaria pesada y un equipo que conoce el terreno.</p>
+        <div class="acciones">
+          <a class="btn btn-principal" data-wa="Hola, quiero pedir un presupuesto." href="#contacto">Pedí tu presupuesto</a>
+          <a class="enlace" href="#servicios">Ver qué hacemos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Zona ===== -->
+  <div class="zona">
+    <div class="contenedor">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#15181c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <p>Trabajamos en gran parte de San Miguel de Tucumán.</p>
+    </div>
+  </div>
+
+  <!-- ===== Servicios ===== -->
+  <section class="seccion servicios" id="servicios">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2>Qué hacemos</h2>
+        <p class="intro">Trabajos viales y de movimiento de suelos, de una calle a una ruta. Si lo tuyo no está en la lista, escribinos y lo vemos.</p>
+      </div>
+      <ul>
+        <li>
+          <span class="rombo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M6 29 14 3M26 29 18 3"/><path d="M16 7v3M16 14v4M16 22v6"/></svg></span>
+          <h3>Repavimentación de rutas y calles</h3>
+          <p>Fresado, bacheo y carpeta asfáltica nueva para que el camino vuelva a andar bien.</p>
+        </li>
+        <li>
+          <span class="rombo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 26h24"/><path d="M6 26v-7h14v7"/><path d="M20 19l5-6h3"/><circle cx="10" cy="26" r="0.1"/></svg></span>
+          <h3>Obras viales</h3>
+          <p>Base y compactación, cordón cuneta y desagües para calles y accesos.</p>
+        </li>
+        <li>
+          <span class="rombo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 27h13"/><path d="M8 27 14 13l10-6 5 8"/><path d="M24 7l-4 10 6 4"/></svg></span>
+          <h3>Excavaciones</h3>
+          <p>Zanjas, cimientos y desmontes, con la máquina adecuada para cada terreno.</p>
+        </li>
+        <li>
+          <span class="rombo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 27 14 8l6 9 4-5 6 15Z"/></svg></span>
+          <h3>Movimiento de suelos</h3>
+          <p>Nivelación, relleno, compactación y traslado de material.</p>
+        </li>
+        <li>
+          <span class="rombo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 11c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 19c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 27c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg></span>
+          <h3>Canales</h3>
+          <p>Construcción, limpieza y reacondicionamiento de canales para que el agua corra.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Cómo trabajamos ===== -->
+  <section class="seccion sobre-oscuro" id="proceso">
+    <div class="contenedor">
+      <h2>Así avanza una obra vial</h2>
+      <p class="intro">Una repavimentación, tramo a tramo. Los pasos pueden variar según la obra.</p>
+      <ol class="tramos">
+        <li><span class="progresiva">0+000</span><h3>Relevamiento y presupuesto</h3><p>Vemos el tramo, medimos y te pasamos un presupuesto claro, con plazos.</p></li>
+        <li><span class="progresiva">0+250</span><h3>Fresado y excavación</h3><p>Retiramos el pavimento deteriorado y preparamos el terreno.</p></li>
+        <li><span class="progresiva">0+500</span><h3>Base y compactación</h3><p>Rellenamos, nivelamos y compactamos para que la base aguante.</p></li>
+        <li><span class="progresiva">0+750</span><h3>Carpeta asfáltica</h3><p>Colocamos y compactamos el asfalto nuevo.</p></li>
+        <li><span class="progresiva">1+000</span><h3>Señalización y entrega</h3><p>Señalizamos y revisamos el tramo con vos antes de cerrar la obra.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Obras ===== -->
+  <section class="seccion obras" id="obras">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2>Nuestras obras</h2>
+        <p class="intro">Algunos de los trabajos en los que estamos.</p>
+      </div>
+      <div class="grilla-obras">
+        <!-- EDITAR: una tarjeta por obra. Reemplazá el bloque "foto" por <img src="foto.jpg" alt="..."> -->
+        <article class="obra">
+          <div class="foto" role="img" aria-label="Espacio para foto de la obra"><span class="estado">En ejecución</span></div>
+          <div class="cuerpo">
+            <h3>Municipalidad de Las Talitas, Obras I</h3>
+            <p>Limpieza del canal norte y trabajos de obra para el municipio.</p>
+          </div>
+        </article>
+        <article class="obra libre">
+          <div class="foto"><span>Acá va tu próxima obra terminada</span></div>
+          <div class="cuerpo">
+            <h3>Obra para completar</h3>
+            <p>Agregá el nombre, una foto y dos líneas sobre lo que se hizo.</p>
+          </div>
+        </article>
+        <article class="obra libre">
+          <div class="foto"><span>Acá va tu próxima obra terminada</span></div>
+          <div class="cuerpo">
+            <h3>Obra para completar</h3>
+            <p>Agregá el nombre, una foto y dos líneas sobre lo que se hizo.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Quiénes somos ===== -->
+  <section class="seccion nosotros" id="nosotros">
+    <div class="contenedor">
+      <div>
+        <h2>Que sepas qué pasa en tu obra, todos los días.</h2>
+        <p class="texto-grande">Somos Constructora Reyes Juan SRL. Trabajamos con una idea simple: hablar claro, hacer las cosas bien y no dejarte con dudas.</p>
+      </div>
+      <div class="principios">
+        <div>
+          <h3>Hablamos claro</h3>
+          <p>Presupuestos detallados y plazos que se pueden cumplir. Si algo cambia, te lo decimos antes.</p>
+        </div>
+        <div>
+          <h3>Obra prolija y segura</h3>
+          <p>Orden en el trabajo, cuidado de las personas y buenas terminaciones.</p>
+        </div>
+        <div>
+          <h3>Seguimiento diario</h3>
+          <p>Cada día registramos las horas, los avances y las novedades de cada obra. Así podemos contarte exactamente cómo va.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section class="seccion sobre-oscuro contacto" id="contacto">
+    <div class="contenedor">
+      <div>
+        <h2>Contanos qué necesitás</h2>
+        <p class="intro">Escribinos por WhatsApp o dejá tu consulta y te respondemos a la brevedad.</p>
+        <div class="datos">
+          <a class="btn btn-principal" data-wa="Hola, quiero hacer una consulta." href="#contacto" style="justify-self:start">Escribinos por WhatsApp</a>
+          <a class="mail" href="mailto:constructoras.reyes.juan@gmail.com">constructoras.reyes.juan@gmail.com</a>
+          <!-- EDITAR: agregá acá la dirección y el horario de atención -->
+        </div>
+      </div>
+
+      <form id="form-consulta" novalidate>
+        <label>Tu nombre
+          <input name="nombre" autocomplete="name" required>
+        </label>
+        <label>¿Qué necesitás?
+          <textarea name="mensaje" required placeholder="Contanos qué trabajo tenés en mente, dónde y para cuándo."></textarea>
+        </label>
+        <button class="btn btn-principal" type="submit">Enviar por WhatsApp</button>
+        <small>Al enviar se abre WhatsApp con tu mensaje listo para mandar.</small>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="marca">
+      <svg viewBox="0 0 40 40" aria-hidden="true" width="34" height="34">
+        <rect width="40" height="40" rx="4" fill="#f5b800"/>
+        <path d="M8 21 20 10l12 11" fill="none" stroke="#15181c" stroke-width="3.2"/>
+        <path d="M12 21v11h16V21" fill="none" stroke="#15181c" stroke-width="3.2"/>
+        <rect x="18" y="25" width="4" height="7" fill="#15181c"/>
+      </svg>
+      <span class="marca-texto"><b>Reyes Juan</b><span>Constructora SRL</span></span>
+    </div>
+    <nav aria-label="Pie">
+      <a href="#servicios">Servicios</a>
+      <a href="#obras">Obras</a>
+      <a href="#contacto">Contacto</a>
+      <a data-sistema href="https://constructora-reyes-juan.streamlit.app/" target="_blank" rel="noopener">Acceso al sistema</a>
+    </nav>
+    <small>© <span id="anio">2026</span> Constructora Reyes Juan SRL. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<a class="flota" data-wa="Hola, quiero pedir un presupuesto." href="#contacto" aria-label="Pedir presupuesto por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C7 3 3 6.8 3 11.5c0 1.8.6 3.4 1.6 4.8L3.5 21l4.9-1.3c1 .5 2.2.8 3.6.8 5 0 9-3.8 9-8.5S17 3 12 3z" fill="#0b1f12"/><circle cx="8.3" cy="11.6" r="1.3" fill="#25d366"/><circle cx="12" cy="11.6" r="1.3" fill="#25d366"/><circle cx="15.7" cy="11.6" r="1.3" fill="#25d366"/></svg>
+  <span>Pedí tu presupuesto</span>
+</a>
+
+<script>
+/* ===== EDITAR SOLO ESTO ===== */
+const CONFIG = {
+  // WhatsApp: código de país + área + número, sin +, espacios ni guiones. Ejemplo Argentina: 5493815551234
+  whatsapp: "5490000000000",
+  // Dirección de la app de gestión
+  sistema: "https://constructora-reyes-juan.streamlit.app/"
+};
+/* ============================ */
+
+(function () {
+  var waPendiente = /^549?0+$/.test(CONFIG.whatsapp);
+
+  function urlWA(texto) {
+    return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(texto);
+  }
+
+  // Enlaces de WhatsApp
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (waPendiente) {
+        alert("Falta configurar el número de WhatsApp en el archivo (CONFIG.whatsapp).");
+        return;
+      }
+      window.open(urlWA(a.dataset.wa), "_blank", "noopener");
+    });
+  });
+
+  // Enlaces al sistema
+  document.querySelectorAll("[data-sistema]").forEach(function (a) { a.href = CONFIG.sistema; });
+
+  // Formulario -> WhatsApp
+  var form = document.getElementById("form-consulta");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nombre = form.nombre.value.trim();
+    var mensaje = form.mensaje.value.trim();
+    if (!nombre || !mensaje) {
+      (nombre ? form.mensaje : form.nombre).focus();
+      return;
+    }
+    if (waPendiente) {
+      alert("Falta configurar el número de WhatsApp en el archivo (CONFIG.whatsapp).");
+      return;
+    }
+    window.open(urlWA("Hola, soy " + nombre + ". " + mensaje), "_blank", "noopener");
+  });
+
+  // Menú en celular
+  var burger = document.getElementById("burger");
+  var menu = document.getElementById("menu");
+  function cerrar() { menu.classList.remove("abierto"); burger.setAttribute("aria-expanded", "false"); }
+  burger.addEventListener("click", function () {
+    var abierto = menu.classList.toggle("abierto");
+    burger.setAttribute("aria-expanded", String(abierto));
+  });
+  menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", cerrar); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrar(); });
+
+  document.getElementById("anio").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
